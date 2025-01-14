@@ -92,24 +92,24 @@ class Controller {
                 if (xDiff > 0) {
                     /* right swipe */
                     this.checkOver();
-                    this.arrangeBlocks(0, this.boardSize, this.boardSize, 0, "right");
+                    this.arrangeBlocks(0, 0, this.boardSize, this.boardSize, "left");
                     this.boardMoved && this.createPoint();
                 } else {
                     /* left swipe */
                     this.checkOver();
-                    this.arrangeBlocks(0, 0, this.boardSize, this.boardSize, "left");
+                    this.arrangeBlocks(0, this.boardSize, this.boardSize, 0, "right");
                     this.boardMoved && this.createPoint();
                 }
             } else {
                 if (yDiff > 0) {
                     /* down swipe */
                     this.checkOver();
-                    this.arrangeBlocks(this.boardSize, 0, 0, this.boardSize, "down");
+                    this.arrangeBlocks(0, 0, this.boardSize, this.boardSize, "up");
                     this.boardMoved && this.createPoint();
                 } else {
                     /* up swipe */
                     this.checkOver();
-                    this.arrangeBlocks(0, 0, this.boardSize, this.boardSize, "up");
+                    this.arrangeBlocks(this.boardSize, 0, 0, this.boardSize, "down");
                     this.boardMoved && this.createPoint();
                 }
             }
