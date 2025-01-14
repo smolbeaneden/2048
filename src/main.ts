@@ -1,4 +1,5 @@
-import _ from 'lodash';
+import {random} from 'radash';
+import {draw} from 'radash';
 import './style.css';
 
 
@@ -124,8 +125,8 @@ class Controller {
     getRandomEmptyPosition(): Point {
         let maxTries = 1000;
         while (maxTries > 0) {
-            let x = _.random(this.boardSize);
-            let y = _.random(this.boardSize);
+            let x = random(0,this.boardSize);
+            let y = random(0,this.boardSize);
             if (this.board[x][y] == null) {
                 return {x, y};
             }
@@ -305,7 +306,7 @@ class Controller {
 
     createPoint(value: number | null = null): void {
         this.randomPoint = this.getRandomEmptyPosition();
-        let pointValue: number | null = value ?? _.sample([2, 2, 2, 2, 4]);
+        let pointValue: number | null = value ?? draw([2, 2, 2, 2, 4]);
         this.board[this.randomPoint.x][this.randomPoint.y] = pointValue;
         console.log("showing,");
         this.show();
